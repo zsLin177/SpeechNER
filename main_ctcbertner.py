@@ -87,6 +87,7 @@ if __name__ == '__main__':
     subparser.add_argument('--lr_rate', default=1, type=int)
     subparser.add_argument('--warmup', default=0.1, type=float)
     subparser.add_argument('--clip', default=5.0, type=float)
+    subparser.add_argument('--res', default='pred.txt', help='path to output file')
 
     subparser = subparsers.add_parser('evaluate', help='Evaluation.')
     subparser.add_argument('--train', default='data/sp_ner/new_train.json', help='path to train file')
@@ -94,7 +95,7 @@ if __name__ == '__main__':
     subparser.add_argument('--ctc_path', default='None', help='path to the pre-trained ctc asr model')
     subparser.add_argument('--ctc_bert_path', default='None', help='path to the pre-trained ctcbert model as encoder')
     # subparser.add_argument('--ctc_path', default='exp/ctc-linearproj768/best.model', help='path to the pre-trained ctc asr model')
-    subparser.add_argument('--res', default='pred.txt', help='path to input file')
+    subparser.add_argument('--res', default='pred.txt', help='path to output file')
 
 
     parse(parser)
