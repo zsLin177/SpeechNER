@@ -1,6 +1,16 @@
 # End-to-End ASR-NER
+* Speech Data: http://openslr.org/33/
+* Aishell-NER (Input speech, output transcript and NE): https://github.com/Alibaba-NLP/AISHELL-NER
+* CNERTA (Input speech and transcript, output NE): https://github.com/DianboWork/CNERTA
 
 ## Input speech, output transcript and NE
+* Json Form
+```python
+    {"key": "BAC009S0724W0121", "wav": "your_path_to_this_wav_file/BAC009S0724W0121.wav", "txt": "广州市房地产中介协会分析", "ner_txt": "<广州市房地产中介协会>分析", "bio_lst": ["B-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "O", "O"]}
+    {"key": "BAC009S0724W0122", "wav": "your_path_to_this_wav_file/BAC009S0724W0122.wav", "txt": "广州市房地产中介协会还表示", "ner_txt": "<广州市房地产中介协会>还表示", "bio_lst": ["B-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "I-ORG", "O", "O", "O"]}
+```
+
+
 * Train
 ```python
 python -m main_ctcattasr train --train data/end2end/train.json \
