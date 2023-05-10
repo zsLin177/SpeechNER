@@ -708,9 +708,12 @@ class ASRModel(torch.nn.Module):
 def init_asr_model(configs):
     if configs['cmvn_file'] is not None:
         mean, istd = load_cmvn(configs['cmvn_file'], configs['is_json_cmvn'])
+        # global_cmvn = GlobalCMVN(
+        #     torch.from_numpy(mean).float(),
+        #     torch.from_numpy(istd).float())
         global_cmvn = GlobalCMVN(
-            torch.from_numpy(mean).float(),
-            torch.from_numpy(istd).float())
+            torch.tensor(mean).float(),
+            torch.tensor(istd).float())
     else:
         global_cmvn = None
 
@@ -750,9 +753,12 @@ def init_asr_model(configs):
 def init_encoder(configs):
     if configs['cmvn_file'] is not None:
         mean, istd = load_cmvn(configs['cmvn_file'], configs['is_json_cmvn'])
+        # global_cmvn = GlobalCMVN(
+        #     torch.from_numpy(mean).float(),
+        #     torch.from_numpy(istd).float())
         global_cmvn = GlobalCMVN(
-            torch.from_numpy(mean).float(),
-            torch.from_numpy(istd).float())
+            torch.tensor(mean).float(),
+            torch.tensor(istd).float())
     else:
         global_cmvn = None
 
@@ -976,9 +982,12 @@ class CTCModel(torch.nn.Module):
 def init_ctc_model(configs):
     if configs['cmvn_file'] is not None:
         mean, istd = load_cmvn(configs['cmvn_file'], configs['is_json_cmvn'])
+        # global_cmvn = GlobalCMVN(
+        #     torch.from_numpy(mean).float(),
+        #     torch.from_numpy(istd).float())
         global_cmvn = GlobalCMVN(
-            torch.from_numpy(mean).float(),
-            torch.from_numpy(istd).float())
+            torch.tensor(mean).float(),
+            torch.tensor(istd).float())
     else:
         global_cmvn = None
     
