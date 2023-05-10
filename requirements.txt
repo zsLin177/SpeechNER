@@ -1,0 +1,15 @@
+dill==0.3.4
+hanlp==2.1.0b47
+nltk==3.7
+numpy==1.24.2
+numpy==1.13.3
+Pillow==9.1.0
+PyYAML==6.0
+sentencepiece==0.1.96
+tensorboardX==2.5
+TextGrid==1.5
+torch==1.11.0
+torchaudio==0.11.0
+tqdm==4.64.0
+transformers==4.5.1
+typeguard==2.13.3
